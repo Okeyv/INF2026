@@ -3,8 +3,9 @@
 # 15 задание ЕГЭ. Алгебра логики.
 
 # MOD(100,A) - % (остаток от деления)
-# DIR(x,25) - первая цифра числа (В данном услучае 2)
+# DIR(x,25) - первая цифра числа (В данном случае 2)
 # ДЕЛ(x,A) - деление числа
+# ЦИФ(x,y) - натуральное число x оканчивается на ту же цифру, что и натуральное число y 
 
 # ------------------------------------------------------------------
 
@@ -661,5 +662,241 @@
 #     if all(f(x,y,A) for x in range(1,1000)for y in range(1,1000)):
 #         print(A)
 #         break
+
+# ------------------------------------------------------------------
+
+# def f(x):
+#     P = 10<=x<=150
+#     Q = 160<=x<=250
+#     R = 240<=x<=300
+#     A = a1<=x<=a2
+#     return (Q <= P) or ((not A)<= R)
+
+# ox = [dx for x in(10,150,160,250,240,300) for dx in(x,x+0.001,x-0.001)]
+# m = [] 
+# for a1 in ox:
+#     for a2 in ox:
+#         if a2>=a1 and all(f(x) for x in ox):
+#             m.append(a2-a1)
+# print(min(m))
+
+# ------------------------------------------------------------------
+
+# def f(x,y,A):
+#     return not((x<7) or (y>=5*x+A-60) or (x>=36) or (y <225))
+
+# for A in range(1000,1,-1):
+#     if all(f(x,y,A) == 0 for x in range(1000) for y in range(1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x):
+#     C = 48<=x<=94
+#     J = 83<=x<=100
+#     A = a1<=x<=a2
+#     return (not(C or J)) <= (not A)
+
+# ox = [dx for x in (48,94,83,100)for dx in(x,x+0.001,x-0.001)]
+# m = []
+# for a1 in ox:
+#     for a2 in ox:
+#         if a2>=a1 and all(f(x) for x in ox):
+#             m.append(a2-a1)
+# print(max(m))
+
+# ------------------------------------------------------------------
+
+# def f(x,A):
+#     g = str(x)
+#     return ((g[0]!="5") and (g[0]=="4"))<=(x>A-11)
+
+# for A in range(1000,1,-1):
+#     if all(f(x,A) for x in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x):
+#     return x&57 == 0 or ((x&23 == 0) <= (not(x&A==0)))
+# for A in range(1,1000):
+#     if all(f(x) for x in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x,y):
+#     return (((x%7!=0)) and (x%13==0))<=(x>A-40)
+# for A in range(1000,1,-1):
+#     if all(f(x,y) for x in range(1,1000) for y in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x,y):
+#     return (x-y>=39) or(y<=x) or (y>=A-20)
+# for A in range(1000,1,-1):
+#     if all(f(x,y) for x in range(1,1000) for y in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x):
+#     M = 32<=x<=68
+#     N = 54<=x<=76
+#     A = a1<=x<=a2
+#     return (not(M or N)) == (not A)
+
+# ox = [dx for x in(32,68,54,76)for dx in(x,x+0.001,x-0.001)]
+# m = []
+# for a1 in ox:
+#     for a2 in ox:
+#         if a2>=a1 and all(f(x) for x in ox):
+#             m.append(a2-a1)
+# print(min(m))
+
+# ------------------------------------------------------------------
+
+# def f(x):
+#     P = 15<=x<=40
+#     Q = 21<=x<=63
+#     A = a1<=x<=a2
+#     return P <= ((Q and (not A))<= (not P))
+
+# ox = [dx for x in(15,40,21,63)for dx in(x,x+0.001,x-0.001)]
+# m = []
+# for a1 in ox:
+#     for a2 in ox:
+#         if a2>=a1 and all(f(x) for x in ox):
+#             m.append(a2-a1)
+# print(min(m))
+
+# ------------------------------------------------------------------
+
+# def f(x,y,A):
+#     return (x<=19) or (y<2*x+A-50) or (y>17)
+# for A in range(1,1000):
+#     if all(f(x,y,A) for x in range(1,1000) for y in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x,y,A):
+#     return (x+y<=24) or (y<=x-2) or (y>=A)
+# for A in range(1000,1,-1):
+#     if all(f(x,y,A) for x in range(1,1000) for y in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x,y,A):
+#     return (x+y<=30) or (y<=x+2) or (y>=A)
+# for A in range(1000,1,-1):
+#     if all(f(x,y,A) for x in range(1,1000) for y in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x,A):
+#     B = 70<=x<=90
+#     return (x%A==0) or (B <= (x%22!=0))
+# for A in range(1000,1,-1):
+#     if all(f(x,A) for x in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x):
+#     P = 25<=x<=73
+#     Q = 75<=x<=118
+#     A = a1<=x<=a2
+#     return (A and (not Q)) <= (P or Q)
+
+# ox = [dx for x in(25,73,75,118) for dx in (x,x+0.001,x-0.001)]
+# m = []
+# for a1 in ox:
+#     for a2 in ox:
+#         if a2>=a1 and all(f(x) for x in ox):
+#             m.append(a2-a1)
+# print(max(m))
+
+# ------------------------------------------------------------------
+
+# def f(x,A):
+#     return (x%A!=0) <= ((x%28==0) <=(x%49!=0))
+# for A in range(1000,1,-1):
+#     if all(f(x,A) for x in range(1,1000)):
+#         print(A)
+#         break
+
+# ------------------------------------------------------------------
+
+# def f(x,A):
+#     return (x%A!=0) <= ((x%14==0)<=(x%4!=0))
+# for A in range(1000,1,-1):
+#     if all(f(x,A) for x in range(1,1000)):
+#         print(A)
+#         break 
+
+# ------------------------------------------------------------------
+
+# def f(x, y, A):
+#     return ((A<x) or (x**2-7*x+10>0)) and ((A>=y) or (y**2+7*y+12>0))
+
+# print(sum(all(f(x, y, A) for x in range(-100, 111) for y in range(-150, 121)) for A in range(-200, 201)))
+
+# ------------------------------------------------------------------
+
+# def f(x):
+#     B = 24<=x<=90
+#     C = 47<=x<=115
+#     A = a1<=x<=a2
+#     return (C <= ((not A) and B)) <= (not C)
+
+# ox = [dx for x in(24,90,47,115)for dx in(x,x+0.001,x-0.001)]
+# m = []
+# for a1 in ox:
+#     for a2 in ox:
+#         if a2>=a1 and all(f(x) for x in ox):
+#             m.append(a2-a1)
+# print(min(m))
+
+# ------------------------------------------------------------------
+
+# from math import *
+# cnt = 0
+# def nod(n,m,k):
+#     return gcd(n,m)==k
+# def f(x,A):
+#     return nod(A,420,2) or ((not nod(A,x,12)) <= (not nod(110,x,11)))
+# for A in range(1,1001):
+#     if all(f(x,A) for x in range(1,1000)):
+#         cnt += 1
+# print(cnt)
+
+# ------------------------------------------------------------------
+
+# def f(x):
+#     P = 16<=x<=84
+#     Q = 27<=x<=43
+#     A = a1<=x<=a2
+#     return (A <= P) or Q
+
+# ox = [dx for x in(16,84,27,43)for dx in(x,x+0.001,x-0.001)]
+# m = []
+# for a1 in ox:
+#     for a2 in ox:
+#         if a2>=a1 and all(f(x) for x in ox):
+#             m.append(a2-a1)
+# print(max(m))
 
 # ------------------------------------------------------------------
