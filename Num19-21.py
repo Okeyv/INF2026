@@ -1,6 +1,56 @@
 # ------------------------------------------------------------------
 
-# ОСНОВА
+# Базовый код для одной куче камней
+
+def f(s,m):
+    if s<16 :return m%2==0
+    if m == 0:return 0
+    h = [f(s-3,m-1),f(s-8,m-1),f(s//3,m-1)]
+    return any(h) if m%2!=0 else all(h)
+print("19",*[s for s in range(16,300)if f(s,2)])
+print("20",*[s for s in range(16,300)if not f(s,1)and f(s,3)])
+print("21",*[s for s in range(16,300)if not f(s,2)and f(s,4)])
+
+# Меняется только значения в 'h', но в ней переменная 'm-1', всегда такая.
+# А так же меняется условие if "s<16"
+# И подстраивается вывод под определенные значения , все это в списке, тоесть из print, меняется только range
+
+# ------------------------------------------------------------------
+
+# 2 КУЧИ
+
+# def f(a,b,m):
+#     if a*b >= 63: return m%2==0
+#     if m == 0 :return 0
+#     h = [f(a+1,b,m-1),f(a,b+1,m-1),f(a*2,b,m-1),f(a,b*2,m-1)]
+#     return any(h) if m%2 != 0 else all(h)
+# print("19",[s for s in range(1,32)if f(2,s,2)])
+# print("20",[s for s in range(1,32)if not f(2,s,1) and f(2,s,3)])
+# print("21",[s for s in range(1,32)if not f(2,s,2) and f(2,s,4)])
+
+# В некоторых заданиях просят произведение куч, тоесть мы пишем if a*b>= 63
+# А обычно мы просто складываем кучи, то есть if a+b>= 63
+# Первая буква в f(2,s,2) это буквально переменная "a". почему 2? Потому что нам в условии сказали, что в первоначальный момент в куче было 2 камня
+# a - первая куча
+# b - вторая куча
+
+# ------------------------------------------------------------------
+
+# ДВЕ КУЧИ / НЕУДАЧНЫЙ ХОД В 19
+
+# from math import ceil
+# def f(a,b,m):
+#     if a+b<=108:return m%2 ==0
+#     if m == 0:return 0 
+#     h = [f(a-2,b,m-1),f(a,b-2,m-1),f(ceil(a/2),b,m-1),f(a,ceil(b/2),m-1)]
+#     # return any(h) if m%2!=0 else any(h) # ДЛЯ 19 НЕУДАЧНЫЙ ХОД
+#     return any(h) if m%2!=0 else all(h) # ДЛЯ 20-21 ОБЫЧНЫЙ ХОД 
+
+# print("19",max([s for s in range(49,200)if f(60,s,2)]))
+# print("20",[s for s in range(49,200)if not f(60,s,1) and f(60,s,3)])
+# print("21",max([s for s in range(49,200)if not f(60,s,2) and f(60,s,4)]))
+
+# ------------------------------------------------------------------
 
 # def f(s, m):
 #     if s >= 231: return m % 2 == 0  # Если достигли или превысили порог — выигрывает тот, кто последний ходил
@@ -49,8 +99,6 @@
 
 # ------------------------------------------------------------------
 
-# УНИВЕРСАЛЬНОЕ ПОДХОДИТ ПОЧТИ ПОД ВСЕ
-
 # def f(s,m):
 #     if s >= 51: return m%2==0
 #     if m == 0 :return 0
@@ -60,36 +108,6 @@
 # print("20",[s for s in range(1,51)if not f(s,1) and f(s,3)])
 # print("21",[s for s in range(1,51)if not f(s,2) and f(s,4)])
 
-# ------------------------------------------------------------------
-
-# 2 КУЧИ
-
-# def f(a,b,m):
-#     if a*b >= 63: return m%2==0
-#     if m == 0 :return 0
-#     h = [f(a+1,b,m-1),f(a,b+1,m-1),f(a*2,b,m-1),f(a,b*2,m-1)]
-#     return any(h) if m%2 != 0 else all(h)
-# print("19",[s for s in range(1,32)if f(2,s,2)])
-# print("20",[s for s in range(1,32)if not f(2,s,1) and f(2,s,3)])
-# print("21",[s for s in range(1,32)if not f(2,s,2) and f(2,s,4)])
-
-# ------------------------------------------------------------------
-
-# ДВЕ КУЧИ / НЕУДАЧНЫЙ ХОД В 19
-
-# from math import ceil
-# def f(a,b,m):
-#     if a+b<=108:return m%2 ==0
-#     if m == 0:return 0 
-#     h = [f(a-2,b,m-1),f(a,b-2,m-1),f(ceil(a/2),b,m-1),f(a,ceil(b/2),m-1)]
-#     # return any(h) if m%2!=0 else any(h) # ДЛЯ 19 НЕУДАЧНЫЙ ХОД
-#     return any(h) if m%2!=0 else all(h) # ДЛЯ 20-21 ОБЫЧНЫЙ ХОД 
-
-# print("19",max([s for s in range(49,200)if f(60,s,2)]))
-# print("20",[s for s in range(49,200)if not f(60,s,1) and f(60,s,3)])
-# print("21",max([s for s in range(49,200)if not f(60,s,2) and f(60,s,4)]))
-
-# ------------------------------------------------------------------
 
 # def f(a,b,m):
 #     if a+b>=131:return m%2==0
