@@ -402,3 +402,70 @@
 # 49
 # 50 98
 # 101
+
+# 
+
+# def f(s,m):
+#     if s>=91:return m%2==0
+#     if m==0:return 0
+#     h = [f(s+1,m-1),f(s+4,m-1),f(s*3,m-1)]
+#     return any(h) if m%2!=0 else all(h)
+# print("19",[s for s in range(1,91)if f(s,2)])
+# print("20",[s for s in range(1,91)if not f(s,1) and f(s,3)])
+# print("21",[s for s in range(1,91)if not f(s,2) and f(s,4)])
+
+# print(bin(2027)[2:])
+# print(int("1111110101111",2))
+
+# def f(s,m):
+#     if s >= 471 :return m%2==0
+#     if m==0:return 0
+#     h = [f(s+4,m-1),f(s-7,m-1),f(s*4,m-1)]
+#     return any(h) if m%2!=0 else all(h)
+# print("19",[s for s in range(1,471) if f(s,2)])
+# print("20",[s for s in range(1,471) if not f(s,1) and f(s,3)])
+# print("21",[s for s in range(1,471) if not f(s,2) and f(s,4)])
+
+
+# def f(s,m):
+#     if s >= 124:return m%2==0
+#     if m == 0 :return 0
+#     h = [f(s+1,m-1),f(s+5,m-1),f(s*3,m-1)]
+#     return any(h) if m%2!=0 else all(h)
+# print("19",[s for s in range(1,124) if f(s,2)])
+# print("20",[s for s in range(1,124) if not f(s,1) and f(s,3)])
+# print("21",[s for s in range(1,124) if not f(s,2) and f(s,4)])
+
+# 41
+# 36 40
+# 35
+
+# def f(a,b,m):
+#     if a*b>=516:return m%2==0
+#     if m == 0:return 0
+#     h = [f(a+3,b,m-1),f(a,b+3,m-1),f(a+13,b,m-1),f(a,b+13,m-1)]
+#     return any(h) if m%2!=0 else any(h)
+#     # return any(h) 
+#     # Обычно пишут после "Не удачного хода", но тут говорится после "некоторого". Это одно и тоже.
+# print("19",len([s for s in range(1,74) if f(7,s,2)]))
+# print("20",[s for s in range(1,74) if not f(7,s,1) and f(7,s,3)])
+# print("21",[s for s in range(1,74) if not f(7,s,2) and f(7,s,4)])
+
+# 58
+# 10 11
+# 19
+
+# def f(a,b,m):
+#     if a+b>=207:return m%2==0
+#     if m == 0:return 0
+#     h = [f(a+1,b,m-1),f(a,b+1,m-1),f(a*2,b,m-1),f(a,b*2,m-1)]
+#     return any(h) if m%2!=0 else all(h)
+#     # return any(h)
+# print("19",[s for s in range(1,190) if f(17,s,2)])
+# print("20",[s for s in range(1,190) if not f(17,s,1) and f(17,s,3)])
+# print("21",[s for s in range(1,190) if not f(17,s,2) and f(17,s,4)])
+
+# 48
+# 86 94
+# 85 
+
