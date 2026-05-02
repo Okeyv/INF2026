@@ -38,4 +38,24 @@
 #     else:
 #         break  
 
+
+
+# print(cnt)
+
+
+# from itertools import product
+# chet = "1357"
+# cnt = 0
+# for p in product("012345678", repeat=5):
+#     s = "".join(p)
+#     if s[0] == '0':
+#         continue        
+#     if s.count('0') == 1:
+#         pos = s.index('0') 
+#         left = (pos == 0) or (s[pos-1] not in chet)
+#         right = (pos == 4) or (s[pos+1] not in chet)
+        
+#         if left and right:
+#             сnt += 1
+
 # print(cnt)
